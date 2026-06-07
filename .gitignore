@@ -8,3 +8,7 @@ logs/
 .env
 
 models/*.pt
+
+*.db
+
+.DS_Store
