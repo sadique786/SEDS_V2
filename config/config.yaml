@@ -1,0 +1,23 @@
+project:
+  name: "SEDS_V2"
+
+detection:
+  confidence_threshold: 0.85
+
+  target_classes:
+    - elephant
+
+tracking:
+  enabled: true
+
+alerts:
+  telegram: true
+  email: false
+  sms: false
+
+cooldown:
+  seconds: 300
+
+storage:
+  save_images: true
+  save_videos: true
