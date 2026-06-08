@@ -40,3 +40,52 @@ class DatabaseManager:
         conn.commit()
 
         conn.close()
+    def insert_detection(
+        self,
+        timestamp,
+        object_class,
+        confidence,
+        image_path
+    ):
+
+        conn = self.get_connection()
+
+        cursor = conn.cursor()
+
+        cursor.execute(
+            """
+            INSERT INTO detections
+            (
+                timestamp,
+                object_class,
+                confidence,
+                image_path
+            )
+            VALUES (?, ?, ?, ?)
+            """,
+            (
+                timestamp,
+                object_class,
+                confidence,
+                image_path
+            )
+        )
+
+        conn.commit()
+        conn.close()
+
+    def get_all_detections(self):
+
+        conn = self.get_connection()
+
+        cursor = conn.cursor()
+
+        cursor.execute(
+            "SELECT * FROM detections"
+        )
+
+        rows = cursor.fetchall()
+
+        conn.close()
+
+        return rows
