@@ -22,7 +22,8 @@ class DetectionService:
             timestamp=event.timestamp,
             object_class=event.object_class,
             confidence=event.confidence,
-            image_path=event.image_path
+            image_path=event.image_path,
+	    event_id=event.event_id
         )
 
         self.logger.info(

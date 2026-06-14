@@ -45,7 +45,8 @@ class DatabaseManager:
         timestamp,
         object_class,
         confidence,
-        image_path
+        image_path,
+	event_id
     ):
 
         conn = self.get_connection()
@@ -59,15 +60,17 @@ class DatabaseManager:
                 timestamp,
                 object_class,
                 confidence,
-                image_path
+                image_path,
+		event_id
             )
-            VALUES (?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?)
             """,
             (
                 timestamp,
                 object_class,
                 confidence,
-                image_path
+                image_path,
+		event_id
             )
         )
 
