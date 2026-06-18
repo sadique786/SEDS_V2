@@ -46,3 +46,23 @@ class AnalyticsManager:
         conn.close()
 
         return avg
+        
+    def get_all_detections(self):
+
+        conn = self.db.get_connection()
+
+        cursor = conn.cursor()
+
+        cursor.execute(
+            """
+            SELECT *
+            FROM detections
+            ORDER BY id DESC
+            """
+        )
+
+        rows = cursor.fetchall()
+
+        conn.close()
+
+        return rows
