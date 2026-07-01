@@ -66,6 +66,7 @@ class AnalyticsManager:
         conn.close()
 
         return rows
+
     def confidence_distribution(self):
 
         conn = self.db.get_connection()
