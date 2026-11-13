@@ -1,5 +1,7 @@
 # Virtual Environment
 venv/
+.venv/
+env/
 
 # Python
 __pycache__/
@@ -8,18 +10,53 @@ __pycache__/
 # macOS
 .DS_Store
 
+# Windows
+Thumbs.db
+
 # Environment Variables
 .env
+.env.*
+!.env.example
 
 # Database
 *.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
 
 # Logs
 logs/
+*.log
+*.log.*
 
 # Models (optional, if downloaded automatically)
 models/*.pt
+models/*.pth
+models/*.onnx
+models/*.engine
+models/*.tflite
 yolov8n.pt
+
+# Generated evidence and capture output. Keep the existing sample artifacts visible.
+/captures/**
+!/captures/visualized_elephant.jpg
+!/captures/2026/
+!/captures/2026/06/
+!/captures/2026/06/14/
+!/captures/2026/06/14/EVT-a8805d7e.json
+captures/**/*.tmp
+captures/**/*.part
+captures/**/*.log
+*.tmp
+*.part
 
 # Streamlit cache
 .streamlit/
